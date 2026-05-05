@@ -9,12 +9,19 @@ import BookList from './pages/books/BookList'
 import BookDetails from './pages/books/BookDetails'
 import BookAddForm from './pages/books/BookAddForm'
 
+import { useContext } from 'react'
+import { ThemeContext } from './context/theme.context'
+
 function App() {
 
-  return (
-    <>
+  // const [ isDarkTheme, setIsDarkTheme ] = useState(false)
 
-      <Navbar />
+  const { isDarkTheme } = useContext(ThemeContext)
+
+  return (
+    <div className={isDarkTheme ? "dark-theme" : "light-theme"}>
+
+      <Navbar/>
      
       <Routes>
 
@@ -27,7 +34,7 @@ function App() {
 
       </Routes>
 
-    </>
+    </div>
   )
 }
 

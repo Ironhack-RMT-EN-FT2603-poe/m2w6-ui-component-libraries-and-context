@@ -1,26 +1,34 @@
+import { useContext } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { ThemeContext } from '../context/theme.context';
+
 
 function AddForm() {
+
+  const { bootstrapTheme } = useContext(ThemeContext)
+
   return (
-    <form>
+    <Form className='p-4'>
       
-      <div>
-        <label htmlFor="title">Title</label>
-        <input type="text" name="title"/>
-      </div>
+      <Form.Group className='m-2' data-bs-theme={bootstrapTheme}>
+        <Form.Label htmlFor="title">Title</Form.Label>
+        <Form.Control type="text" name="title"/>
+      </Form.Group>
 
-      <div>
-        <label htmlFor="description">Description</label>
-        <input type="text" name="description"/>
-      </div>
+      <Form.Group className='m-2' data-bs-theme={bootstrapTheme}>
+        <Form.Label htmlFor="description">Description</Form.Label>
+        <Form.Control type="text" name="description"/>
+      </Form.Group>
 
-      <div>
-        <label htmlFor="content">Content</label>
-        <input type="text" name="content"/>
-      </div>
+      <Form.Group className='m-2' data-bs-theme={bootstrapTheme}>
+        <Form.Label htmlFor="content">Content</Form.Label>
+        <Form.Control type="text" name="content"/>
+      </Form.Group>
 
-      <button>Add new Book</button>
+      <Button className='mt-2' variant='success'>Add new Book</Button>
 
-    </form>
+    </Form>
   )
 }
 

@@ -12,3 +12,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.dark-theme {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  min-height: 100vh;
+}
+
+.light-theme {
+  background-color: white;
+  color: rgb(25, 25, 25);
+  min-height: 100vh;
+}
